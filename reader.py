@@ -25,11 +25,17 @@ def frame():
     acs.mainloop()
 
 def login():
+    acs.destroy()
     global root1
     root1=tk.Tk()
     root1.wm_attributes('-topmost', 1)
-    root1.title('管理员登录')
+    root1.title('读者登录')
     root1.geometry('500x300')
+
+    canvas = tk.Canvas(root1, height=1200, width=900)  # 中
+    image_file = tk.PhotoImage(file='background.gif')
+    image = canvas.create_image(-100, 0, anchor='nw', image=image_file)
+    canvas.place(x=0, y=0)
 
     lable1 = tk.Label(root1, text='账号：', font=25).place(x=100,y=50)
     lable2 = tk.Label(root1, text='密码：', font=25).place(x=100, y=100)
@@ -49,7 +55,7 @@ def register():
     global root2
     root2 = tk.Tk()
     root2.wm_attributes('-topmost', 1)
-    root2.title('管理员注册')
+    root2.title('读者注册')
     root2.geometry('500x300')
 
     lable1 = tk.Label(root2, text='账号：', font=25).place(x=100, y=50)
